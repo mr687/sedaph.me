@@ -1,0 +1,102 @@
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+header,main,footer{
+	width: 100%;
+	max-width: 100%;
+}
+header{
+	padding:50px 0px;
+	height: 100%;
+	background: #434343;
+}
+main{
+	background: #e8eaf6;
+}
+
+footer{
+	min-height: 200px;
+	background: #3d3d3d;
+}
+
+nav.ui.menu{
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+nav.ui.menu a.item:before{
+	background: transparent;
+}
+nav.ui.menu a.item{
+	color:#eee;
+}
+nav.ui.menu a.item:last-child{
+	margin-left: 10px;
+}
+nav.ui.menu a.item:not(:last-child){
+	margin-left: 10px;
+	margin-right: 10px;
+}
+nav.ui.menu a.item:hover{
+	color:#fff;
+	background: transparent;
+}
+#type_wrapper{
+	width: 400px;
+	background: transparent;
+	/*margin-top: 30%;*/
+}
+#typing{
+	color: white;
+	font-size: 3rem;
+}
+#typing em{
+	font-weight: 100;
+	color: #d67c1c;
+}
+img{
+	max-width: 100%;
+}
+header .ui.container{
+	position: relative;
+	height: 100%;
+}
+header .ui.column{
+	/*margin-top: 10%;*/
+}
+
+#bottom_arrow{
+	position: absolute;
+	z-index: 1;
+	bottom: 50px;
+	left: 50%;
+	right: 50%;
+	color: white;
+}
+#bottom_arrow.bounce {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
+}
+@keyframes bouncing {
+	0%, 20%, 50%, 80%, 100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-30px);
+	}
+	60% {
+		transform: translateY(-15px);
+	}
+}
+
+#whoami{
+	padding: 50px 0;
+}
