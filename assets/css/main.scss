@@ -1,0 +1,103 @@
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+section#main,body{
+	cursor: none;
+	width: 100%;
+	overflow: hidden;
+}
+section#main{
+	position: relative;
+	padding:10vh 0px;
+	height: 100vh;
+	background: #f8ffff;
+	*{
+		font-family: 'Raleway', sans-serif;
+	}
+	h1, div.item a{
+		font-family: 'Oswald', sans-serif !important;
+	}
+	h1{
+		font-size: 1.3em;
+		color: black;
+	}
+	p{text-align: center;}
+
+	#middle{
+		top:0;
+		left: 0;
+		bottom:0;
+		position: absolute;
+		margin: auto 0;
+		background: #3d3e3f;
+		height: 30vh;
+		width: 100%;
+
+	}
+
+	#bottom{
+		position: absolute;
+		bottom: 10vh;
+		left: 0;
+		right: 0;
+		.ui.menu{
+			background: none;
+			border:none;
+			box-shadow: none;
+			.item a{
+				letter-spacing: 1px;
+				font-size: 1em;
+			}
+			.item:before{
+				width: 0;
+			}
+		}
+	}
+}
+#cursor{
+	pointer-events: none;
+	display: none;
+	width: 70px;
+	z-index: 1;
+	height: 70px;
+	border: 2px solid grey;
+	border-radius: 50%;
+	position: absolute;
+	transition: 200ms;
+	transition-timing-function: ease-out;
+	animation: cursorAnim .5s infinite alternate;
+}
+#cursor.expand{
+	animation: cursorAnim2 .5s forwards;
+	border: 1px solid grey;
+}
+@keyframes cursorAnim {
+	from{
+		transform: scale(1);
+	}
+	to{
+		transform: scale(.7);
+	}
+}
+@keyframes cursorAnim2{
+	0% {
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(2);
+	}
+	100%{
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+
+img{
+	max-width: 100%;
+}

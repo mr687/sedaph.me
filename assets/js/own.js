@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+	const cursor = $('#cursor');
+	const menuItem = $('#bottom .item');
+	const doc = $(document);
+
 	new TypeIt('#typing',{
 		speed: 50,
 		startDelay:900,
@@ -18,5 +22,21 @@ $(document).ready(function () {
 		.options({speed: 100, deleteSpeed: 20})
 		.pause(400)
 		.go();
+
+	doc.bind('mousemove',function (e) {
+		cursor.attr("style","display:block; top:"+(e.pageY - 35)+"px; left:"+(e.pageX - 35)+"px;");
+	})
+
+	doc.bind('click',function () {
+		cursor.addClass('expand');
+
+		setTimeout(()=>{
+			cursor.removeClass('expand');
+		},500);
+	})
+
+	doc.bind('mouseout',function () {
+		cursor.hide();
+	})
 
 })
